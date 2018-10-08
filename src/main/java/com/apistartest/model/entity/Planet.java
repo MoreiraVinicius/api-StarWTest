@@ -23,6 +23,9 @@ public class Planet {
 	
 	private String terrain;
 	
+	private int appearanceInFilms;
+
+	
 	
 
 	public String getName() {
@@ -58,7 +61,13 @@ public class Planet {
 		this.idHex = idHex;
 	}
 
+	public int getAppearanceInFilms() {
+		return appearanceInFilms;
+	}
 
+	public void setAppearanceInFilms(int appearanceInFilms) {
+		this.appearanceInFilms = appearanceInFilms;
+	}
 
 	@Override
 	public int hashCode() {

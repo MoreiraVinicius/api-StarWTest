@@ -2,11 +2,11 @@ package com.apistartest.model.service;
 
 import java.util.List;
 
-import com.apistartest.model.common.IOperations;
+import com.apistartest.model.common.ICategory;
 import com.apistartest.model.dao.AbstractDao;
 
 
-public abstract class AbstractService<T> implements IOperations<T> {
+public abstract class AbstractService<T> implements ICategory<T> {
 
 	public abstract AbstractDao<T> getDao();
 
@@ -23,11 +23,6 @@ public abstract class AbstractService<T> implements IOperations<T> {
 	@Override
 	public T create(T entity) {
 		return getDao().create(entity);
-	}
-
-	@Override
-	public T update(T entity) {
-		return getDao().update(entity);
 	}
 
 	@Override

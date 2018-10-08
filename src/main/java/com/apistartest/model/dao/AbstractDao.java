@@ -7,10 +7,10 @@ import org.bson.types.ObjectId;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.query.Query;
 
-import com.apistartest.model.common.IOperations;
+import com.apistartest.model.common.ICategory;
 
 
-public abstract class AbstractDao<T> implements IOperations<T> {
+public abstract class AbstractDao<T> implements ICategory<T> {
 
 	private Class<T> entityClass;
 
@@ -33,12 +33,6 @@ public abstract class AbstractDao<T> implements IOperations<T> {
 
 	@Override
 	public T create(T entity) {
-		getDatastore().save(entity);
-		return entity;
-	}
-
-	@Override
-	public T update(T entity) {
 		getDatastore().save(entity);
 		return entity;
 	}

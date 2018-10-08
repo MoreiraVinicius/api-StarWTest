@@ -18,7 +18,7 @@ public class PlanetRoutes {
 
 	private static final String API_CONTEXT = "apistartest/";
 
-	private static final String API_CATEGORY = "planet";
+	private static final String API_CATEGORY = "planets";
 
 	public PlanetRoutes() {
 
@@ -50,21 +50,6 @@ public class PlanetRoutes {
 				Planet planet = mapper.readValue(request.body(), Planet.class);
 				planet = planetService.create(planet);
 				response.status(201);
-				response.type("application/json");
-				return planet;
-			} catch (Exception e) {
-				response.status(500);
-				return e.getMessage();
-			}
-		}, jsonTransformer::render);
-
-		// Put
-		put(API_CONTEXT + API_CATEGORY, (request, response) -> {
-			try {
-				ObjectMapper mapper = new ObjectMapper();
-				Planet planet = mapper.readValue(request.body(), Planet.class);
-				planet = planetService.update(planet);
-				response.status(200);
 				response.type("application/json");
 				return planet;
 			} catch (Exception e) {
