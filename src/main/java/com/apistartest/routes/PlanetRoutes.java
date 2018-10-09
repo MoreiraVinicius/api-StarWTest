@@ -48,6 +48,7 @@ public class PlanetRoutes {
 			try {
 				ObjectMapper mapper = new ObjectMapper();
 				Planet planet = mapper.readValue(request.body(), Planet.class);
+				planet = planetService.checkValues(planet);
 				planet = planetService.create(planet);
 				response.status(201);
 				response.type("application/json");

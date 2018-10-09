@@ -3,30 +3,29 @@ package com.apistartest.model.entity;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
-import org.mongodb.morphia.annotations.PostLoad;
-import org.mongodb.morphia.annotations.PostPersist;
-import org.mongodb.morphia.annotations.Transient;
+
 
 
 @Entity("planets")
 public class Planet {
 
 	@Id
-	private ObjectId id;
-
-	@Transient
-	private String idHex;
+	private String id = new ObjectId().toHexString();
 	
 	private String name;
 	
 	private String climate;
 	
 	private String terrain;
-	
-	private int appearanceInFilms;
 
 	
 	
+
+	
+	public String getId() {
+		return id;
+	}
+
 
 	public String getName() {
 		return name;
@@ -52,22 +51,6 @@ public class Planet {
 		this.climate = climate;
 	}
 	
-
-	public String getIdHex() {
-		return idHex;
-	}
-
-	public void setIdHex(String idHex) {
-		this.idHex = idHex;
-	}
-
-	public int getAppearanceInFilms() {
-		return appearanceInFilms;
-	}
-
-	public void setAppearanceInFilms(int appearanceInFilms) {
-		this.appearanceInFilms = appearanceInFilms;
-	}
 
 	@Override
 	public int hashCode() {
@@ -99,13 +82,6 @@ public class Planet {
 		final StringBuilder builder = new StringBuilder();
 		builder.append("Planet: [id=").append(id.toString()).append(", name=").append(name).append("]");
 		return builder.toString();
-	}
-
-	@PostLoad
-	@PostPersist
-	private void loadIdHex() {
-		if(id != null)
-			setIdHex(id.toString());
 	}
 
 }
