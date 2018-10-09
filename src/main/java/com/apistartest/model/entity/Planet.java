@@ -5,8 +5,7 @@ import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 
 
-
-@Entity("planets")
+@Entity(value="planets", noClassnameStored = true)
 public class Planet {
 
 	@Id
@@ -18,8 +17,6 @@ public class Planet {
 	
 	private String terrain;
 
-	
-	
 
 	
 	public String getId() {
