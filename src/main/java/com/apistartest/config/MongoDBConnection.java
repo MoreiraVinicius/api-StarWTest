@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.apistartest.config;
 
 import java.net.UnknownHostException;

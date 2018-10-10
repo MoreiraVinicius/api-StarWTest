@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.apistartest.config;
 
 import com.apistartest.model.dao.IPlanetDao;

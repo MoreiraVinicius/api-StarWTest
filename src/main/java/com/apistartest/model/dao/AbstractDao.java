@@ -20,8 +20,15 @@ public abstract class AbstractDao<T> implements ICategory<T> {
 
 	@Override
 	public T findById(String entityId) {
-		Query<T> query = getDatastore().find(entityClass, "id", new ObjectId(entityId));
+		Query<T> query = getDatastore().find(entityClass, "_id",entityId);
 		return (T) query.get();
+	}
+	
+	@Override
+	public T findByName(String name) {
+		Query<T> query = getDatastore().find(entityClass,"name",name);
+		return (T) query.get();
+		
 	}
 
 	@Override

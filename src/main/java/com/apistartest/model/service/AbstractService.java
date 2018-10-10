@@ -14,6 +14,11 @@ public abstract class AbstractService<T> implements ICategory<T> {
 	public T findById(String id) {
 		return getDao().findById(id);
 	}
+	
+	@Override
+	public T findByName(String name) {
+		return getDao().findByName(name);
+	}
 
 	@Override
 	public List<T> findAll() {

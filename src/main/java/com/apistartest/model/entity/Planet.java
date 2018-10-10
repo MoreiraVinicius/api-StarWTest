@@ -9,7 +9,7 @@ import org.mongodb.morphia.annotations.Id;
 public class Planet {
 
 	@Id
-	private String id = new ObjectId().toHexString();
+	private String id = new ObjectId().toString();
 	
 	private String name;
 	

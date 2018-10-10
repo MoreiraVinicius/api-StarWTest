@@ -3,7 +3,6 @@ package com.apistartest.routes;
 import static spark.Spark.delete;
 import static spark.Spark.get;
 import static spark.Spark.post;
-import static spark.Spark.put;
 
 import com.apistartest.model.entity.Planet;
 import com.apistartest.model.service.IPlanetService;
@@ -36,12 +35,32 @@ public class PlanetRoutes {
 				if (planet != null) {
 					return planet;
 				}
-				return planet;
+				response.status(404);
+				
+				return planet; 
 			} catch (Exception e) {
 				response.status(500);
 				return e.getMessage();
 			}
 		}, jsonTransformer::render);
+		
+		// Get by name
+		get(API_CONTEXT + API_CATEGORY + "/name/:name", (request, response) -> {
+			try {
+				String name = request.params(":name");
+				Planet planet = planetService.findByName(name);
+				if (planet != null) {
+					return planet;
+				}
+				response.status(404);
+				
+				return planet; 
+			} catch (Exception e) {
+				response.status(500);
+				return e.getMessage();
+			}
+		}, jsonTransformer::render);
+
 
 		// Post
 		post(API_CONTEXT + API_CATEGORY, (request, response) -> {
