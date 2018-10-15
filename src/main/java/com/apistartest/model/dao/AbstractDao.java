@@ -45,11 +45,6 @@ public abstract class AbstractDao<T> implements ICategory<T> {
 	}
 
 	@Override
-	public void delete(T entity) {
-		getDatastore().delete(entity);
-	}
-
-	@Override
 	public void deleteById(String entityId) {
 		getDatastore().delete(entityClass, new ObjectId(entityId));
 	}

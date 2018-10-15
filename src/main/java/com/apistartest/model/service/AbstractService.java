@@ -31,12 +31,8 @@ public abstract class AbstractService<T> implements ICategory<T> {
 	}
 
 	@Override
-	public void delete(T entity) {
-		getDao().delete(entity);
-	}
-
-	@Override
 	public void deleteById(String entityId) {
 		getDao().deleteById(entityId);
 	}
+	
 }

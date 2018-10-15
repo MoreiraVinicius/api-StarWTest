@@ -12,8 +12,5 @@ public interface ICategory<T> {
 
 	T create(final T entity);
 
-	void delete(final T entity);
-
 	void deleteById(final String entityId);
-
 }

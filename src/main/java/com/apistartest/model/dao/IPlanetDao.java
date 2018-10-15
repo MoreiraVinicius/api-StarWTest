@@ -5,5 +5,5 @@ import com.apistartest.model.entity.Planet;
 
 
 public interface IPlanetDao extends ICategory<Planet> {
-
 }
+

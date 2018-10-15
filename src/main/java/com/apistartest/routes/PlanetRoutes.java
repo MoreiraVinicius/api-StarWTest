@@ -33,6 +33,7 @@ public class PlanetRoutes {
 				String id = request.params(":id");
 				Planet planet = planetService.findById(id);
 				if (planet != null) {
+					planetService.findAppearancesByName(planet.getName());
 					return planet;
 				}
 				response.status(404);
@@ -68,6 +69,7 @@ public class PlanetRoutes {
 				ObjectMapper mapper = new ObjectMapper();
 				Planet planet = mapper.readValue(request.body(), Planet.class);
 				planet = planetService.checkValues(planet);
+				planet.setAppearancesFilms(planetService.findAppearancesByName(planet.getName()));
 				planet = planetService.create(planet);
 				response.status(201);
 				response.type("application/json");

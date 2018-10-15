@@ -17,8 +17,19 @@ public class Planet {
 	
 	private String terrain;
 
+	private int AppearancesFilms;
 
 	
+	public int getAppearancesFilms() {
+		return AppearancesFilms;
+	}
+
+
+	public void setAppearancesFilms(int appearancesFilms) {
+		AppearancesFilms = appearancesFilms;
+	}
+
+
 	public String getId() {
 		return id;
 	}
