@@ -30,3 +30,7 @@ __[GET]__ /apistartest/planets/name/:name
 
 __[GET]__ /apistartest/planets/:id 
 - Deleta o planeta com o id especificado no MongoDB
+
+#### Espero que gostem, tentei fazer com ferramentas bem leves no lugar de framework pesados. Fiquem aqui com um ensinamento que marcou a minha infancia
+
+![Ensinamento de Chew](http://images.uncyc.org/pt/thumb/8/8d/Chewbacca_filósofo.jpg/300px-Chewbacca_filósofo.jpg)
